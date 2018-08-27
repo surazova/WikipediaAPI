@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>WikipediaAPI</title>
+    <link href='style.css' rel='stylesheet' type='text/css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+    integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+    crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+</head>
+<body>
+	<body class="container-fluid">
+  <!-- Wikipedia Brand -->
+  <div class="row brand-nav">
+    <img id="wiki-logo" src="https://upload.wikimedia.org/wikipedia/en/thumb/8/80/Wikipedia-logo-v2.svg/103px-Wikipedia-logo-v2.svg.png" alt="Wikipedia Logo">
+    <h4 class="brand-name"><i class="fab fa-wikipedia-w fa-lg"></i>ikipedia</h4>
+  </div> <!-- end Wikipedia Brand -->
+  
+  <!-- Search Input -->
+  <div class="row search-row">
+    <div class="input-group">
+      <input id="search" type="text" class="form-control">
+      <span class="input-group-addon">
+          <i class="fa fa-search"></i>
+      </span>
+    </div>
+  </div> <!-- end Search Input -->
+  
+  <!-- Random Article Link -->
+  <div class="row">
+    <div class="col">
+      <h6 class="text-center">Search on Wikipedia. Or 
+        <a target="_blank" href="https://en.wikipedia.org/wiki/Special:Random">suprise me</a>!
+      </h6>
+    </div>
+  </div> <!-- end Random Article Link -->
+  
+  <!-- Add search items here -->
+  <div id="searchResults">
+    <div class="row">
+      <div class="col">
+        <a target="_blank" id="randomLink" href="#">
+          <h2 class="text-center" id="randomTitle"></h2>
+        </a>
+        <p class="text-center" id="randomExtract"></p>
+      </div>
+    </div>
+  </div> <!-- end Add search items here-->
+</body>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
