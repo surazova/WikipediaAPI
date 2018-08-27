@@ -9,21 +9,19 @@
     integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
     crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+
 </head>
+
 <body>
-	<body class="container-fluid">
-  <!-- Wikipedia Brand -->
-  <div class="row brand-nav">
-    <img id="wiki-logo" src="https://upload.wikimedia.org/wikipedia/en/thumb/8/80/Wikipedia-logo-v2.svg/103px-Wikipedia-logo-v2.svg.png" alt="Wikipedia Logo">
-    <h4 class="brand-name"><i class="fab fa-wikipedia-w fa-lg"></i>ikipedia</h4>
-  </div> <!-- end Wikipedia Brand -->
-  
+  <div class="container">
+    <ul id="box-ul">
+      <h1 class="logo">Wikipedia Viewer</h1>
   <!-- Search Input -->
   <div class="row search-row">
     <div class="input-group">
       <input id="search" type="text" class="form-control">
-      <span class="input-group-addon">
-          <i class="fa fa-search"></i>
+
       </span>
     </div>
   </div> <!-- end Search Input -->
@@ -31,8 +29,8 @@
   <!-- Random Article Link -->
   <div class="row">
     <div class="col">
-      <h6 class="text-center">Search on Wikipedia. Or 
-        <a target="_blank" href="https://en.wikipedia.org/wiki/Special:Random">suprise me</a>!
+      <h6 class="text-center">Search on Wikipedia or 
+        <a target="_blank" href="https://en.wikipedia.org/wiki/Special:Random">Randomize</a>
       </h6>
     </div>
   </div> <!-- end Random Article Link -->
@@ -47,7 +45,9 @@
         <p class="text-center" id="randomExtract"></p>
       </div>
     </div>
-  </div> <!-- end Add search items here-->
+  </div>
+  </ul>
+  </div>
 </body>
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>

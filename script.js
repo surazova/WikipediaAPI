@@ -1,8 +1,5 @@
-/* Random Article in Page Start Up
-   JSONP Method
-   ===================================  */
+/* global */
 var api = "https://en.wikipedia.org/w/api.php?action=query&format=json&prop=extracts&generator=random&exchars=600&explaintext=1&grnnamespace=0&callback=?";
-
 $.getJSON(api, function(data){
   var keys = [];
   for (var l in data.query.pages) {
@@ -10,43 +7,21 @@ $.getJSON(api, function(data){
       keys.push(l);
     }
   }
-  
-  $("#randomTitle").html(data.query.pages[keys[0]].title);
-  $("#randomExtract").html(data.query.pages[keys[0]].extract);
-  $("#randomLink").attr("href","https://en.wikipedia.org/wiki/" + data.query.pages[keys[0]].title.replace(" ","%20"));
 });
 
-/* Random Article in Page Start Up
-   Ajax Alternative
-   =================================== */
-/*
-$.ajax({
-  url: 'https://en.wikipedia.org/w/api.php',
-  data: { 
-    action: 'query',
-    format: 'json',
-	  generator: 'random',
-	  grnnamespace: '0'
-  },
-  dataType: 'jsonp',
-  success: function (data){
-    var keys = [];
-    for (var l in data.query.pages) {
-      if (data.query.pages.hasOwnProperty(l)){
-        keys.push(l);
-      }
-    }
-    $("#randomTitle").html(data.query.pages[keys[0]].title);
-    $("#randomExtract").html(data.query.pages[keys[0]].extract);
-    $("#randomLink").attr("href","https://en.wikipedia.org/wiki/" + data.query.pages[keys[0]].title.replace(" ","%20"));
+// Searching for input when enter is hit
+$("input").keypress(function (e) {
+  if (e.which == 13) {
+    $("form").submit();
+    searchResults($("input").val());
+    return false;
   }
 });
-*/
 
-// Displaying Search Results using Wikipedia API
+
+// Displaying Search Results 
 function searchResults(searchValue){
   var api = "https://en.wikipedia.org/w/api.php?action=query&format=json&list=search&srsearch=" + searchValue + "&callback=?";
-  
   var htmlCode = "";
   $.getJSON(api, function(data){
     for(var i in data.query.search) {
@@ -56,11 +31,3 @@ function searchResults(searchValue){
   });
 }
 
-// Searching for query on Enter 
-$("input").keypress(function (e) {
-  if (e.which == 13) {
-    $("form").submit();
-    searchResults($("input").val());
-    return false;
-  }
-});
